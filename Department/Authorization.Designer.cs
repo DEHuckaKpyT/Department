@@ -45,6 +45,7 @@ namespace Department
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(121, 20);
             this.Password.TabIndex = 1;
+            this.Password.Text = "admin";
             // 
             // Login
             // 
@@ -53,6 +54,8 @@ namespace Department
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(121, 21);
             this.Login.TabIndex = 2;
+            this.Login.Text = "admin";
+            this.Login.SelectedIndexChanged += new System.EventHandler(this.Login_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -87,6 +90,7 @@ namespace Department
             this.Help.Name = "Help";
             this.Help.Size = new System.Drawing.Size(121, 20);
             this.Help.TabIndex = 6;
+            this.Help.Text = "admin";
             // 
             // buttonEnter
             // 
@@ -111,7 +115,9 @@ namespace Department
             this.Controls.Add(this.Login);
             this.Controls.Add(this.Password);
             this.Name = "Authorization";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";
+            this.Load += new System.EventHandler(this.Authorization_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

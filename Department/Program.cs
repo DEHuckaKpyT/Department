@@ -14,9 +14,11 @@ namespace Department
         [STAThread]
         static void Main()
         {
+            DataBase.Connect();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authorization());
+            DataBase.Disconnect();
         }
     }
 }

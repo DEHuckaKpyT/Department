@@ -19,7 +19,34 @@ namespace Department
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
+            List<User> users = DataBase.SelectQuery<User>($"select * from [user] where login = '{Login.Text}'");
+            if (users.Count == 1)
+            {
+                User user = users.First();
+                if (user.Password == Password.Text)
+                {
+                    new FormMainMenu(user.UserID).Show();
+                    Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль");
+            }
+        }
 
+        private void Authorization_Load(object sender, EventArgs e)
+        {
+            List<User> users = DataBase.SelectQuery<User>($"select * from [User]");
+            foreach (User user in users)
+                Login.Items.Add(user.Login);
+        }
+
+        private void Login_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<User> users = DataBase.SelectQuery<User>($"select * from [User] where Login = '{Login.Text}'");
+            if (users.Count == 1)
+                Help.Text = users.First().Password;
         }
     }
 }
