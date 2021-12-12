@@ -26,13 +26,7 @@ namespace Department
             //dataAdapter = new SqlDataAdapter("SELECT * FROM View_PostCandidateFalse", DataBase.connection);
             //dataAdapter.Fill(dataSet, "Candidate");     
             //dataGridViewCandidates.DataSource = dataSet.Tables["Candidate"];
-            dataGridViewCandidates.DataSource = DataBase.SelectQuery<View_PostCandidateFalse>($"select * from View_PostCandidateFalse");
-            dataGridViewCandidates.Columns[0].Visible = false;
-            dataGridViewCandidates.Columns.Add(new DataGridViewButtonColumn()
-            {
-                Text = "Подробнее",
-                UseColumnTextForButtonValue = true
-            });
+            LoadGrid();
         }
 
         //private void button1_Click(object sender, EventArgs e)
@@ -58,7 +52,19 @@ namespace Department
             if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
             {
                 new FormCandidate((int)grid[0, e.RowIndex].Value).ShowDialog();
+                LoadGrid();
             }
+        }
+
+        void LoadGrid()
+        {
+            dataGridViewCandidates.DataSource = DataBase.SelectQuery<View_PostCandidateFalse>($"select * from View_PostCandidateFalse");
+            dataGridViewCandidates.Columns[0].Visible = false;
+            dataGridViewCandidates.Columns.Add(new DataGridViewButtonColumn()
+            {
+                Text = "Подробнее",
+                UseColumnTextForButtonValue = true
+            });
         }
     }
 }

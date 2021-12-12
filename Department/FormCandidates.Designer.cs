@@ -35,9 +35,12 @@ namespace Department
             // 
             // dataGridViewCandidates
             // 
+            this.dataGridViewCandidates.AllowUserToAddRows = false;
+            this.dataGridViewCandidates.AllowUserToDeleteRows = false;
             this.dataGridViewCandidates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCandidates.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewCandidates.Name = "dataGridViewCandidates";
+            this.dataGridViewCandidates.ReadOnly = true;
             this.dataGridViewCandidates.RowHeadersWidth = 45;
             this.dataGridViewCandidates.Size = new System.Drawing.Size(650, 521);
             this.dataGridViewCandidates.TabIndex = 0;

@@ -33,17 +33,13 @@ namespace Department
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.textBoxHouse = new System.Windows.Forms.TextBox();
-            this.textBoxFlat = new System.Windows.Forms.TextBox();
             this.textBoxWork = new System.Windows.Forms.TextBox();
             this.textBoxPost = new System.Windows.Forms.TextBox();
             this.textBoxStreet = new System.Windows.Forms.TextBox();
@@ -86,15 +82,6 @@ namespace Department
             this.label4.TabIndex = 3;
             this.label4.Text = "Телефон";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Дом";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -104,19 +91,10 @@ namespace Department
             this.label6.TabIndex = 5;
             this.label6.Text = "Улица";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 193);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Квартира";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 225);
+            this.label8.Location = new System.Drawing.Point(12, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 15);
             this.label8.TabIndex = 7;
@@ -125,7 +103,7 @@ namespace Department
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 254);
+            this.label9.Location = new System.Drawing.Point(12, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 15);
             this.label9.TabIndex = 8;
@@ -159,30 +137,16 @@ namespace Department
             this.textBoxPhone.Size = new System.Drawing.Size(194, 20);
             this.textBoxPhone.TabIndex = 13;
             // 
-            // textBoxHouse
-            // 
-            this.textBoxHouse.Location = new System.Drawing.Point(169, 157);
-            this.textBoxHouse.Name = "textBoxHouse";
-            this.textBoxHouse.Size = new System.Drawing.Size(194, 20);
-            this.textBoxHouse.TabIndex = 14;
-            // 
-            // textBoxFlat
-            // 
-            this.textBoxFlat.Location = new System.Drawing.Point(169, 190);
-            this.textBoxFlat.Name = "textBoxFlat";
-            this.textBoxFlat.Size = new System.Drawing.Size(194, 20);
-            this.textBoxFlat.TabIndex = 15;
-            // 
             // textBoxWork
             // 
-            this.textBoxWork.Location = new System.Drawing.Point(169, 222);
+            this.textBoxWork.Location = new System.Drawing.Point(169, 159);
             this.textBoxWork.Name = "textBoxWork";
             this.textBoxWork.Size = new System.Drawing.Size(194, 20);
             this.textBoxWork.TabIndex = 16;
             // 
             // textBoxPost
             // 
-            this.textBoxPost.Location = new System.Drawing.Point(169, 251);
+            this.textBoxPost.Location = new System.Drawing.Point(169, 188);
             this.textBoxPost.Name = "textBoxPost";
             this.textBoxPost.Size = new System.Drawing.Size(194, 20);
             this.textBoxPost.TabIndex = 17;
@@ -196,7 +160,7 @@ namespace Department
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(150, 304);
+            this.button.Location = new System.Drawing.Point(150, 241);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(75, 23);
             this.button.TabIndex = 20;
@@ -213,17 +177,13 @@ namespace Department
             this.Controls.Add(this.textBoxStreet);
             this.Controls.Add(this.textBoxPost);
             this.Controls.Add(this.textBoxWork);
-            this.Controls.Add(this.textBoxFlat);
-            this.Controls.Add(this.textBoxHouse);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -242,17 +202,13 @@ namespace Department
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.TextBox textBoxHouse;
-        private System.Windows.Forms.TextBox textBoxFlat;
         private System.Windows.Forms.TextBox textBoxWork;
         private System.Windows.Forms.TextBox textBoxPost;
         private System.Windows.Forms.TextBox textBoxStreet;
