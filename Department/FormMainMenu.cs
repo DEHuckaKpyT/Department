@@ -29,5 +29,45 @@ namespace Department
             FormCandidates form = new FormCandidates();
             form.ShowDialog();
         }
+
+        private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void улицыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormStreets().ShowDialog();
+        }
+
+        private void институтыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormInstitutes().ShowDialog();
+        }
+
+        private void КафедрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormDepartments().ShowDialog();
+        }
+
+        private void штрафыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void степениToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void вознагражденияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

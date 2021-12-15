@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,18 @@ namespace Department
             textBoxStreet.Text = (street.First ? $"{street.Sign} {street.Street}" : $"{street.Street} {street.Sign}") + $", д. {candidate.House}, кв. {candidate.Flat}";
 
             LastWork work = DataBase.SelectQuery<LastWork>($"select * from LastWork where WorkID = {candidate.WorkID}")[0];
-            textBoxWork.Text = $"{work.Work}, {work.WorkPlace}";
+            //NOTE хранимая процедура NormalizeDate
+            textBoxDateFrom.Text = (string)DataBase.Execute("NormalizeDate", "@date", work.WorkBegin);
+            //NOTE хранимая процедура NormalizeDate
+            textBoxDateTo.Text = (string)DataBase.Execute("NormalizeDate", "@date", work.WorkEnd);
+            textBoxWork.Text = work.Work;
+            textBoxWorkPlace.Text = work.WorkPlace;
+
+            street = DataBase.SelectQuery<Streets>($"select * from Streets where StreetID = {work.StreetID}")[0];
+            textBoxAdress.Text = (street.First ? $"{street.Sign} {street.Street}" : $"{street.Street} {street.Sign}") + $", д. {candidate.House}";
+
+            textBoxNumber.Text = work.Phone.ToString();
+            textBoxReason.Text = work.Reason;
 
             Posts post = DataBase.SelectQuery<Posts>($"select * from Post where PostID = {candidate.PostID}")[0];
             textBoxPost.Text = post.Post;

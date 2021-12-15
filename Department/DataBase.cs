@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -71,8 +72,20 @@ namespace Department
 
             return affectedRows;
         }
+        public static object Execute(string name, string paramName, object o)
+        {
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = name;
+            command.Parameters.AddWithValue(paramName, o);
+            SqlDataReader sqlDataReader = command.ExecuteReader();
+            sqlDataReader.Read();
+            object oo = sqlDataReader.GetValue(0);
+            sqlDataReader.Close();
+            return oo;
+        }
 
-        static List<T> Fill<T>(this SqlDataReader reader) where T : new()
+static List<T> Fill<T>(this SqlDataReader reader) where T : new()
         {
             List<T> res = new List<T>();
             while (reader.Read())

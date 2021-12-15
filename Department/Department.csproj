@@ -54,6 +54,21 @@
     </Compile>
     <Compile Include="Candidate.cs" />
     <Compile Include="DataBase.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="FormAddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDepartment.Designer.cs">
+      <DependentUpon>FormAddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartment.Designer.cs">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Institutes.cs" />
+    <Compile Include="View_DepartmentsInstitutes.cs" />
     <Compile Include="FormCandidate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,13 +81,32 @@
     <Compile Include="FormCandidates.Designer.cs">
       <DependentUpon>FormCandidates.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDepartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartments.Designer.cs">
+      <DependentUpon>FormDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInstitutes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInstitutes.Designer.cs">
+      <DependentUpon>FormInstitutes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStreets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStreets.Designer.cs">
+      <DependentUpon>FormStreets.cs</DependentUpon>
+    </Compile>
     <Compile Include="LastWork.cs" />
+    <Compile Include="NormalizeDate.cs" />
     <Compile Include="Posts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,14 +116,29 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddDepartment.resx">
+      <DependentUpon>FormAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCandidate.resx">
       <DependentUpon>FormCandidate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCandidates.resx">
       <DependentUpon>FormCandidates.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDepartment.resx">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDepartments.resx">
+      <DependentUpon>FormDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInstitutes.resx">
+      <DependentUpon>FormInstitutes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStreets.resx">
+      <DependentUpon>FormStreets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

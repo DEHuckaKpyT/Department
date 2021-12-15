@@ -22,25 +22,8 @@ namespace Department
 
         private void FormCandidates_Load(object sender, EventArgs e)
         {
-            //dataSet = new DataSet();
-            //dataAdapter = new SqlDataAdapter("SELECT * FROM View_PostCandidateFalse", DataBase.connection);
-            //dataAdapter.Fill(dataSet, "Candidate");     
-            //dataGridViewCandidates.DataSource = dataSet.Tables["Candidate"];
             LoadGrid();
         }
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-            //SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            //try
-            //{
-            //    dataAdapter.Update(dataSet, "Candidate");
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-        //}
 
         private void dataGridViewCandidates_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -58,6 +41,8 @@ namespace Department
 
         void LoadGrid()
         {
+            dataGridViewCandidates.Columns.Clear();
+            //NOTE представление View_PostCandidateFalse
             dataGridViewCandidates.DataSource = DataBase.SelectQuery<View_PostCandidateFalse>($"select * from View_PostCandidateFalse");
             dataGridViewCandidates.Columns[0].Visible = false;
             dataGridViewCandidates.Columns.Add(new DataGridViewButtonColumn()
