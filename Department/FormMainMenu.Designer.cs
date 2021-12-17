@@ -33,16 +33,15 @@ namespace Department
             this.профильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кандидатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеКандидатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.прошлыеМестаРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.улицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.институтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.КафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.штрафыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.степениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.вознагражденияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.прошлыеМестаРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.всеСотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,15 +81,27 @@ namespace Department
             this.всеКандидатыToolStripMenuItem.Text = "Все кандидаты";
             this.всеКандидатыToolStripMenuItem.Click += new System.EventHandler(this.всеКандидатыToolStripMenuItem_Click);
             // 
+            // сотрудникиToolStripMenuItem
+            // 
+            this.сотрудникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.всеСотрудникиToolStripMenuItem});
+            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(98, 23);
+            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            // 
+            // прошлыеМестаРаботыToolStripMenuItem
+            // 
+            this.прошлыеМестаРаботыToolStripMenuItem.Name = "прошлыеМестаРаботыToolStripMenuItem";
+            this.прошлыеМестаРаботыToolStripMenuItem.Size = new System.Drawing.Size(173, 23);
+            this.прошлыеМестаРаботыToolStripMenuItem.Text = "Прошлые места работы";
+            // 
             // справочникиToolStripMenuItem
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.улицыToolStripMenuItem,
             this.институтыToolStripMenuItem,
             this.КафедрыToolStripMenuItem,
-            this.штрафыToolStripMenuItem,
             this.степениToolStripMenuItem,
-            this.вознагражденияToolStripMenuItem,
             this.должностиToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(107, 23);
@@ -117,26 +128,12 @@ namespace Department
             this.КафедрыToolStripMenuItem.Text = "Кафедры";
             this.КафедрыToolStripMenuItem.Click += new System.EventHandler(this.КафедрыToolStripMenuItem_Click);
             // 
-            // штрафыToolStripMenuItem
-            // 
-            this.штрафыToolStripMenuItem.Name = "штрафыToolStripMenuItem";
-            this.штрафыToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.штрафыToolStripMenuItem.Text = "Штрафы";
-            this.штрафыToolStripMenuItem.Click += new System.EventHandler(this.штрафыToolStripMenuItem_Click);
-            // 
             // степениToolStripMenuItem
             // 
             this.степениToolStripMenuItem.Name = "степениToolStripMenuItem";
             this.степениToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.степениToolStripMenuItem.Text = "Степени";
             this.степениToolStripMenuItem.Click += new System.EventHandler(this.степениToolStripMenuItem_Click);
-            // 
-            // вознагражденияToolStripMenuItem
-            // 
-            this.вознагражденияToolStripMenuItem.Name = "вознагражденияToolStripMenuItem";
-            this.вознагражденияToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.вознагражденияToolStripMenuItem.Text = "Вознаграждения";
-            this.вознагражденияToolStripMenuItem.Click += new System.EventHandler(this.вознагражденияToolStripMenuItem_Click);
             // 
             // должностиToolStripMenuItem
             // 
@@ -145,17 +142,12 @@ namespace Department
             this.должностиToolStripMenuItem.Text = "Должности";
             this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
-            // сотрудникиToolStripMenuItem
+            // всеСотрудникиToolStripMenuItem
             // 
-            this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(98, 23);
-            this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
-            // 
-            // прошлыеМестаРаботыToolStripMenuItem
-            // 
-            this.прошлыеМестаРаботыToolStripMenuItem.Name = "прошлыеМестаРаботыToolStripMenuItem";
-            this.прошлыеМестаРаботыToolStripMenuItem.Size = new System.Drawing.Size(173, 23);
-            this.прошлыеМестаРаботыToolStripMenuItem.Text = "Прошлые места работы";
+            this.всеСотрудникиToolStripMenuItem.Name = "всеСотрудникиToolStripMenuItem";
+            this.всеСотрудникиToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.всеСотрудникиToolStripMenuItem.Text = "Все сотрудники";
+            this.всеСотрудникиToolStripMenuItem.Click += new System.EventHandler(this.всеСотрудникиToolStripMenuItem_Click);
             // 
             // FormMainMenu
             // 
@@ -186,11 +178,10 @@ namespace Department
         private System.Windows.Forms.ToolStripMenuItem улицыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem институтыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem КафедрыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem штрафыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem степениToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem вознагражденияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem прошлыеМестаРаботыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem всеСотрудникиToolStripMenuItem;
     }
 }

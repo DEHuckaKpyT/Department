@@ -103,7 +103,11 @@ static List<T> Fill<T>(this SqlDataReader reader) where T : new()
                             var value = reader.GetValue(inc);
                             if (value != DBNull.Value)
                             {
-                                prop.SetValue(t, Convert.ChangeType(value, prop.PropertyType), null);
+                                Type ty = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+
+                                object safeValue = (value == null) ? null : Convert.ChangeType(value, ty);
+                                //object v = Convert.ChangeType( value, prop.PropertyType);
+                                prop.SetValue( t, safeValue, null);
                             }
                         }
                     }

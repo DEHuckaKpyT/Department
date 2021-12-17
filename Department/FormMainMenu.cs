@@ -50,24 +50,19 @@ namespace Department
             new FormDepartments().ShowDialog();
         }
 
-        private void штрафыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void степениToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void вознагражденияToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            new FormDegrees().ShowDialog();
         }
 
         private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new FormPosts().ShowDialog();
+        }
 
+        private void всеСотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormPersons().ShowDialog();
         }
     }
 }
