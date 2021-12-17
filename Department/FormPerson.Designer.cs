@@ -53,20 +53,15 @@ namespace Department
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxPassport = new System.Windows.Forms.TextBox();
-            this.textBoxInstitute = new System.Windows.Forms.TextBox();
-            this.textBoxDepartment = new System.Windows.Forms.TextBox();
             this.textBoxBirth = new System.Windows.Forms.TextBox();
             this.textBoxPlace = new System.Windows.Forms.TextBox();
             this.textBoxPassportDate = new System.Windows.Forms.TextBox();
             this.textBoxSpeciality = new System.Windows.Forms.TextBox();
-            this.textBoxAdress = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.textBoxEducation = new System.Windows.Forms.TextBox();
-            this.textBoxPost = new System.Windows.Forms.TextBox();
             this.textBoxWork = new System.Windows.Forms.TextBox();
             this.textBoxRank = new System.Windows.Forms.TextBox();
-            this.textBoxDegree = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewPenalties = new System.Windows.Forms.DataGridView();
@@ -76,6 +71,15 @@ namespace Department
             this.buttonAddReward = new System.Windows.Forms.Button();
             this.buttonUpdatePenalty = new System.Windows.Forms.Button();
             this.buttonUpdateReward = new System.Windows.Forms.Button();
+            this.comboBoxDepartment = new System.Windows.Forms.ComboBox();
+            this.comboBoxInstitute = new System.Windows.Forms.ComboBox();
+            this.comboBoxStreet = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBoxHouse = new System.Windows.Forms.TextBox();
+            this.textBoxFlat = new System.Windows.Forms.TextBox();
+            this.comboBoxPost = new System.Windows.Forms.ComboBox();
+            this.comboBoxDegree = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPenalties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRewards)).BeginInit();
             this.SuspendLayout();
@@ -287,20 +291,6 @@ namespace Department
             this.textBoxPassport.Size = new System.Drawing.Size(338, 20);
             this.textBoxPassport.TabIndex = 25;
             // 
-            // textBoxInstitute
-            // 
-            this.textBoxInstitute.Location = new System.Drawing.Point(209, 140);
-            this.textBoxInstitute.Name = "textBoxInstitute";
-            this.textBoxInstitute.Size = new System.Drawing.Size(338, 20);
-            this.textBoxInstitute.TabIndex = 24;
-            // 
-            // textBoxDepartment
-            // 
-            this.textBoxDepartment.Location = new System.Drawing.Point(209, 113);
-            this.textBoxDepartment.Name = "textBoxDepartment";
-            this.textBoxDepartment.Size = new System.Drawing.Size(338, 20);
-            this.textBoxDepartment.TabIndex = 23;
-            // 
             // textBoxBirth
             // 
             this.textBoxBirth.Location = new System.Drawing.Point(209, 267);
@@ -331,13 +321,6 @@ namespace Department
             this.textBoxSpeciality.Size = new System.Drawing.Size(338, 20);
             this.textBoxSpeciality.TabIndex = 31;
             // 
-            // textBoxAdress
-            // 
-            this.textBoxAdress.Location = new System.Drawing.Point(209, 335);
-            this.textBoxAdress.Name = "textBoxAdress";
-            this.textBoxAdress.Size = new System.Drawing.Size(338, 20);
-            this.textBoxAdress.TabIndex = 30;
-            // 
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(209, 308);
@@ -359,17 +342,11 @@ namespace Department
             this.textBoxEducation.Size = new System.Drawing.Size(338, 20);
             this.textBoxEducation.TabIndex = 33;
             // 
-            // textBoxPost
-            // 
-            this.textBoxPost.Location = new System.Drawing.Point(209, 406);
-            this.textBoxPost.Name = "textBoxPost";
-            this.textBoxPost.Size = new System.Drawing.Size(338, 20);
-            this.textBoxPost.TabIndex = 32;
-            // 
             // textBoxWork
             // 
             this.textBoxWork.Location = new System.Drawing.Point(209, 554);
             this.textBoxWork.Name = "textBoxWork";
+            this.textBoxWork.ReadOnly = true;
             this.textBoxWork.Size = new System.Drawing.Size(338, 20);
             this.textBoxWork.TabIndex = 37;
             // 
@@ -379,13 +356,6 @@ namespace Department
             this.textBoxRank.Name = "textBoxRank";
             this.textBoxRank.Size = new System.Drawing.Size(338, 20);
             this.textBoxRank.TabIndex = 36;
-            // 
-            // textBoxDegree
-            // 
-            this.textBoxDegree.Location = new System.Drawing.Point(209, 498);
-            this.textBoxDegree.Name = "textBoxDegree";
-            this.textBoxDegree.Size = new System.Drawing.Size(338, 20);
-            this.textBoxDegree.TabIndex = 35;
             // 
             // dateTimePicker1
             // 
@@ -425,11 +395,11 @@ namespace Department
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(311, 726);
+            this.buttonUpdate.Location = new System.Drawing.Point(278, 724);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.Size = new System.Drawing.Size(177, 23);
             this.buttonUpdate.TabIndex = 42;
-            this.buttonUpdate.Text = "Обновить";
+            this.buttonUpdate.Text = "Применить изменения";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
@@ -473,11 +443,92 @@ namespace Department
             this.buttonUpdateReward.UseVisualStyleBackColor = true;
             this.buttonUpdateReward.Click += new System.EventHandler(this.buttonUpdateReward_Click);
             // 
+            // comboBoxDepartment
+            // 
+            this.comboBoxDepartment.FormattingEnabled = true;
+            this.comboBoxDepartment.Location = new System.Drawing.Point(209, 113);
+            this.comboBoxDepartment.Name = "comboBoxDepartment";
+            this.comboBoxDepartment.Size = new System.Drawing.Size(338, 21);
+            this.comboBoxDepartment.TabIndex = 47;
+            // 
+            // comboBoxInstitute
+            // 
+            this.comboBoxInstitute.FormattingEnabled = true;
+            this.comboBoxInstitute.Location = new System.Drawing.Point(209, 144);
+            this.comboBoxInstitute.Name = "comboBoxInstitute";
+            this.comboBoxInstitute.Size = new System.Drawing.Size(338, 21);
+            this.comboBoxInstitute.TabIndex = 48;
+            // 
+            // comboBoxStreet
+            // 
+            this.comboBoxStreet.FormattingEnabled = true;
+            this.comboBoxStreet.Location = new System.Drawing.Point(209, 337);
+            this.comboBoxStreet.Name = "comboBoxStreet";
+            this.comboBoxStreet.Size = new System.Drawing.Size(226, 21);
+            this.comboBoxStreet.TabIndex = 49;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(441, 340);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(14, 15);
+            this.label20.TabIndex = 50;
+            this.label20.Text = "д";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(494, 340);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(20, 15);
+            this.label21.TabIndex = 51;
+            this.label21.Text = "кв";
+            // 
+            // textBoxHouse
+            // 
+            this.textBoxHouse.Location = new System.Drawing.Point(461, 338);
+            this.textBoxHouse.Name = "textBoxHouse";
+            this.textBoxHouse.Size = new System.Drawing.Size(27, 20);
+            this.textBoxHouse.TabIndex = 52;
+            // 
+            // textBoxFlat
+            // 
+            this.textBoxFlat.Location = new System.Drawing.Point(520, 338);
+            this.textBoxFlat.Name = "textBoxFlat";
+            this.textBoxFlat.Size = new System.Drawing.Size(27, 20);
+            this.textBoxFlat.TabIndex = 53;
+            // 
+            // comboBoxPost
+            // 
+            this.comboBoxPost.FormattingEnabled = true;
+            this.comboBoxPost.Location = new System.Drawing.Point(209, 406);
+            this.comboBoxPost.Name = "comboBoxPost";
+            this.comboBoxPost.Size = new System.Drawing.Size(338, 21);
+            this.comboBoxPost.TabIndex = 54;
+            // 
+            // comboBoxDegree
+            // 
+            this.comboBoxDegree.FormattingEnabled = true;
+            this.comboBoxDegree.Location = new System.Drawing.Point(209, 498);
+            this.comboBoxDegree.Name = "comboBoxDegree";
+            this.comboBoxDegree.Size = new System.Drawing.Size(338, 21);
+            this.comboBoxDegree.TabIndex = 55;
+            // 
             // FormPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 798);
+            this.Controls.Add(this.comboBoxDegree);
+            this.Controls.Add(this.comboBoxPost);
+            this.Controls.Add(this.textBoxFlat);
+            this.Controls.Add(this.textBoxHouse);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.comboBoxStreet);
+            this.Controls.Add(this.comboBoxInstitute);
+            this.Controls.Add(this.comboBoxDepartment);
             this.Controls.Add(this.buttonUpdateReward);
             this.Controls.Add(this.buttonUpdatePenalty);
             this.Controls.Add(this.buttonAddReward);
@@ -489,19 +540,14 @@ namespace Department
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBoxWork);
             this.Controls.Add(this.textBoxRank);
-            this.Controls.Add(this.textBoxDegree);
             this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.textBoxEducation);
-            this.Controls.Add(this.textBoxPost);
             this.Controls.Add(this.textBoxSpeciality);
-            this.Controls.Add(this.textBoxAdress);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxBirth);
             this.Controls.Add(this.textBoxPlace);
             this.Controls.Add(this.textBoxPassportDate);
             this.Controls.Add(this.textBoxPassport);
-            this.Controls.Add(this.textBoxInstitute);
-            this.Controls.Add(this.textBoxDepartment);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxFirstName);
@@ -561,20 +607,15 @@ namespace Department
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxPassport;
-        private System.Windows.Forms.TextBox textBoxInstitute;
-        private System.Windows.Forms.TextBox textBoxDepartment;
         private System.Windows.Forms.TextBox textBoxBirth;
         private System.Windows.Forms.TextBox textBoxPlace;
         private System.Windows.Forms.TextBox textBoxPassportDate;
         private System.Windows.Forms.TextBox textBoxSpeciality;
-        private System.Windows.Forms.TextBox textBoxAdress;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.TextBox textBoxEducation;
-        private System.Windows.Forms.TextBox textBoxPost;
         private System.Windows.Forms.TextBox textBoxWork;
         private System.Windows.Forms.TextBox textBoxRank;
-        private System.Windows.Forms.TextBox textBoxDegree;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataGridView dataGridViewPenalties;
@@ -584,5 +625,14 @@ namespace Department
         private System.Windows.Forms.Button buttonAddReward;
         private System.Windows.Forms.Button buttonUpdatePenalty;
         private System.Windows.Forms.Button buttonUpdateReward;
+        private System.Windows.Forms.ComboBox comboBoxDepartment;
+        private System.Windows.Forms.ComboBox comboBoxInstitute;
+        private System.Windows.Forms.ComboBox comboBoxStreet;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBoxHouse;
+        private System.Windows.Forms.TextBox textBoxFlat;
+        private System.Windows.Forms.ComboBox comboBoxPost;
+        private System.Windows.Forms.ComboBox comboBoxDegree;
     }
 }

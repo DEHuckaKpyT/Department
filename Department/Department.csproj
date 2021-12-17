@@ -62,6 +62,12 @@
     <Compile Include="FormAddDepartment.Designer.cs">
       <DependentUpon>FormAddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddPenalty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPenalty.Designer.cs">
+      <DependentUpon>FormAddPenalty.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDegrees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddDepartment.resx">
       <DependentUpon>FormAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPenalty.resx">
+      <DependentUpon>FormAddPenalty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCandidate.resx">
       <DependentUpon>FormCandidate.cs</DependentUpon>

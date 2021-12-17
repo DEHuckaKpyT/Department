@@ -11,5 +11,10 @@ namespace Department
         public int DeparmentID { get; set; }
         public string Deparment { get; set; }
         public int InstituteID { get; set; }
+
+        public override string ToString()
+        {
+            return Deparment;
+        }
     }
 }

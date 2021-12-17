@@ -30,34 +30,50 @@ namespace Department
 
             if (person.DepartmentID != null)
             {
-                Department department = DataBase.SelectQuery<Department>($"select * from Deparment where DeparmentID = {person.DepartmentID}")[0];
-                textBoxDepartment.Text = department.Deparment;
+                foreach (var depar in DataBase.SelectQuery<Department>($"select * from Deparment"))
+                {
+                    comboBoxDepartment.Items.Add(depar);
+                    if (depar.DeparmentID == person.DepartmentID) comboBoxDepartment.SelectedItem = depar;
+                }
+            }
+            if (person.InstituteID != null)
+            {
+                foreach (var inst in DataBase.SelectQuery<Institutes>($"select * from Institute"))
+                {
+                    comboBoxInstitute.Items.Add(inst);
+                    if (person.InstituteID == inst.InstituteID) comboBoxInstitute.SelectedItem = inst;
+                }
             }
             if (person.StreetID != null)
             {
                 Streets street = DataBase.SelectQuery<Streets>($"select * from Streets where StreetID = {person.StreetID}")[0];
-                textBoxAdress.Text = (street.First ? $"{street.Sign} {street.Street}" : $"{street.Street} {street.Sign}") + $", д {person.House}, кв {person.Flat}";
+
+                foreach (Streets st in DataBase.SelectQuery<Streets>("select * from Streets"))
+                {
+                    comboBoxStreet.Items.Add(st);
+                    if (st.StreetID == street.StreetID) comboBoxStreet.SelectedItem = st;
+                }
             }
-            if (person.DepartmentID != null)
-            {
-                Institutes institute = DataBase.SelectQuery<Institutes>($"select * from Institute where InstituteID = {person.InstituteID}")[0];
-                textBoxInstitute.Text = institute.Institute;
-            }
+            textBoxHouse.Text = person.House.ToString();
+            textBoxFlat.Text = person.Flat.ToString();
             if (person.PostID != null)
             {
-                Posts post = DataBase.SelectQuery<Posts>($"select * from Post where PostID = {person.PostID}")[0];
-                textBoxPost.Text = post.Post;
+                foreach (Posts p in DataBase.SelectQuery<Posts>("select * from Post"))
+                {
+                    comboBoxStreet.Items.Add(p);
+                    if (p.PostId == person.PostID) comboBoxStreet.SelectedItem = p;
+                }
             }
             if (person.DegreeID != null)
             {
-                Degrees degree = DataBase.SelectQuery<Degrees>($"select * from Degree where DegreeID = {person.DegreeID}")[0];
-                textBoxDegree.Text = degree.Degree;
+                foreach (Degrees d in DataBase.SelectQuery<Degrees>("select * from Degree"))
+                {
+                    comboBoxStreet.Items.Add(d);
+                    if (d.DegreeID == person.DegreeID) comboBoxStreet.SelectedItem = d;
+                }
             }
-            if (person.DegreeID != null)
-            {
-                LastWork work = DataBase.SelectQuery<LastWork>($"select * from LastWork where WorkID = {person.WorkID}")[0];
-                textBoxWork.Text = work.Work + " " + work.WorkPlace;
-            }
+            LastWork work = DataBase.SelectQuery<LastWork>($"select * from LastWork where WorkID = {person.WorkID}")[0];
+            textBoxWork.Text = work.Work + " " + work.WorkPlace;
             textBoxFirstName.Text = person.FirstName;
             textBoxName.Text = person.Name;
             textBoxLastName.Text = person.LastName;
@@ -107,7 +123,12 @@ namespace Department
 
         private void buttonAddPenalty_Click(object sender, EventArgs e)
         {
-
+            new FormAddPenalty(PersonId).ShowDialog();
+            dataSet1 = new DataSet();
+            dataAdapter1 = new SqlDataAdapter($"SELECT [IDNotePenalty], Penalty FROM Penalty where PersonID = {PersonId}", DataBase.connection);
+            dataAdapter1.Fill(dataSet1, "Penalty");
+            dataGridViewPenalties.DataSource = dataSet1.Tables["Penalty"];
+            dataGridViewPenalties.Columns[0].Visible = false;
         }
 
         private void buttonUpdateReward_Click(object sender, EventArgs e)
@@ -143,28 +164,48 @@ namespace Department
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            DataBase.InsertUpdateDeleteQuery($"update Person set " +
-                $"FirstName = '{textBoxFirstName.Text}', " +
+            string query = $"update Person set " +
                 $"Name = '{textBoxName.Text}', " +
-                $"LastName = '{textBoxLastName.Text}', " +
-                //$"DepartmentID = {Text}, " +
-                //$"InstituteID = {Text}, " +
-                $"Passport = '{textBoxPassport.Text}', " +
-                $"PassportDate = '{dateTimePicker1.Value.ToString("yyyy-mm-dd")}', " +
-                $"Region = '{textBoxPlace.Text}', " +
-                $"Birth = '{dateTimePicker2.Value.ToString("yyyy-mm-dd")}', " +
-                $"Phone = '{textBoxPhone.Text}', " +
-                //$"StreetID = {Text}, " +
-                //$"House = {Text}, " +
-                //$"Flat = {Text}, " +
-                $"Speciality = '{textBoxSpeciality.Text}', " +
-                //$"PostID = {Text}, " +
-                $"Education = '{textBoxEducation.Text}', " +
-                $"Year = '{textBoxYear.Text}-01-01', " +
-                //$"DegreeID = {Text}, " +
-                $"Rank = '{textBoxRank.Text}', " +
-                $"Comment = '{textBoxComment.Text}' " +
-                $"where PersonID = {PersonId}");
+                $"Phone = '{textBoxPhone.Text}', ";
+
+            if (textBoxLastName.Text != "")
+                query += $"LastName = '{textBoxLastName.Text}', ";
+            if (textBoxPassport.Text != "")
+                query += $"Passport = '{textBoxPassport.Text}', ";
+            if (textBoxPassportDate.Text != "")
+                query += $"PassportDate = '{dateTimePicker1.Value.ToString("yyyy-MM-dd")}', ";
+            if (textBoxBirth.Text != "")
+                query += $"Birth = '{dateTimePicker2.Value.ToString("yyyy-MM-dd")}', ";
+            if (textBoxPlace.Text != "")
+                query += $"Region = '{textBoxPlace.Text}', ";
+            if (textBoxSpeciality.Text != "")
+                query += $"Speciality = '{textBoxSpeciality.Text}', ";
+            if (textBoxEducation.Text != "")
+                query += $"Education = '{textBoxEducation.Text}', ";
+            if (textBoxYear.Text != "")
+                query += $"Year = '{textBoxYear.Text}-01-01', ";
+            if (textBoxRank.Text != "")
+                query += $"Rank = '{textBoxRank.Text}', ";
+            if (textBoxComment.Text != "")
+                query += $"Comment = '{textBoxComment.Text}', ";
+            if (textBoxFlat.Text != "")
+                query += $"Flat = {textBoxFlat.Text}, ";
+            if (textBoxHouse.Text != "")
+                query += $"House = {textBoxHouse.Text}, ";
+            if (comboBoxInstitute.Text != "")
+                query += $"InstituteID = {((Institutes)comboBoxInstitute.SelectedItem).InstituteID}, ";
+            if (comboBoxDepartment.Text != "")
+                query += $"DepartmentID = {((Department)comboBoxDepartment.SelectedItem).DeparmentID}, ";
+            if (comboBoxStreet.Text != "")
+                query += $"StreetID = {((Streets)comboBoxStreet.SelectedItem).StreetID}, ";
+            if (comboBoxPost.Text != "")
+                query += $"PostID = {((Posts)comboBoxPost.SelectedItem).PostId}, ";
+            if (comboBoxDegree.Text != "")
+                query += $"DegreeID = {((Degrees)comboBoxDegree.SelectedItem).DegreeID}, ";
+
+            query += $"FirstName = '{textBoxFirstName.Text}' where PersonID = {PersonId}";
+
+            DataBase.InsertUpdateDeleteQuery(query);
         }
     }
 }

@@ -12,5 +12,10 @@ namespace Department
         public string Street { get; set; }
         public string Sign { get; set; }
         public bool First { get; set; }
+
+        public override string ToString()
+        {
+            return First ? $"{Sign} {Street}" : $"{Street} {Sign}";
+        }
     }
 }
