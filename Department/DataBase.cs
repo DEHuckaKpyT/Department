@@ -84,8 +84,31 @@ namespace Department
             sqlDataReader.Close();
             return oo;
         }
+        public static List<T> Execute<T>(string name,
+            string paramName1, object o1,
+            string paramName2, object o2,
+            string paramName3, object o3,
+            string paramName4, object o4
+            ) where T : new()
+        {
+            List<T> items = null;
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = name;
+            command.Parameters.AddWithValue(paramName1, o1);
+            command.Parameters.AddWithValue(paramName2, o2);
+            command.Parameters.AddWithValue(paramName3, o3);
+            command.Parameters.AddWithValue(paramName4, o4);
+            SqlDataReader sqlDataReader = command.ExecuteReader();
 
-static List<T> Fill<T>(this SqlDataReader reader) where T : new()
+            items = Fill<T>(sqlDataReader);
+
+            sqlDataReader.Close();
+
+            return items;
+        }
+
+        static List<T> Fill<T>(this SqlDataReader reader) where T : new()
         {
             List<T> res = new List<T>();
             while (reader.Read())
@@ -107,7 +130,7 @@ static List<T> Fill<T>(this SqlDataReader reader) where T : new()
 
                                 object safeValue = (value == null) ? null : Convert.ChangeType(value, ty);
                                 //object v = Convert.ChangeType( value, prop.PropertyType);
-                                prop.SetValue( t, safeValue, null);
+                                prop.SetValue(t, safeValue, null);
                             }
                         }
                     }

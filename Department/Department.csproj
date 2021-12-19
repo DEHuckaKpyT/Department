@@ -98,6 +98,18 @@
     <Compile Include="FormPosts.Designer.cs">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchCandidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchCandidate.Designer.cs">
+      <DependentUpon>FormSearchCandidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchPerson.Designer.cs">
+      <DependentUpon>FormSearchPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Institutes.cs" />
     <Compile Include="Penalties.cs" />
     <Compile Include="View_DepartmentsInstitutes.cs" />
@@ -185,6 +197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPosts.resx">
       <DependentUpon>FormPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchCandidate.resx">
+      <DependentUpon>FormSearchCandidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchPerson.resx">
+      <DependentUpon>FormSearchPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStreets.resx">
       <DependentUpon>FormStreets.cs</DependentUpon>

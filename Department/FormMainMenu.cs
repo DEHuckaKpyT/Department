@@ -64,5 +64,15 @@ namespace Department
         {
             new FormPersons().ShowDialog();
         }
+
+        private void поискКандидатаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormSearchCandidate().ShowDialog();
+        }
+
+        private void поискСотрудникаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormSearchPerson().ShowDialog();
+        }
     }
 }
