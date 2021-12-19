@@ -31,21 +31,22 @@ namespace Department
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.профильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.мойПрофильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.войтиВДругойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кандидатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеКандидатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискКандидатаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеСотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискСотрудникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.улицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.институтыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.КафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.степениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поискСотрудникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.мойПрофильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.войтиВДругойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.аудитToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@ namespace Department
             this.профильToolStripMenuItem,
             this.кандидатыToolStripMenuItem,
             this.сотрудникиToolStripMenuItem,
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.аудитToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 27);
@@ -73,6 +75,27 @@ namespace Department
             this.профильToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
             this.профильToolStripMenuItem.Text = "Профиль";
             // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            // 
+            // мойПрофильToolStripMenuItem
+            // 
+            this.мойПрофильToolStripMenuItem.Name = "мойПрофильToolStripMenuItem";
+            this.мойПрофильToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.мойПрофильToolStripMenuItem.Text = "Мой профиль";
+            this.мойПрофильToolStripMenuItem.Click += new System.EventHandler(this.мойПрофильToolStripMenuItem_Click);
+            // 
+            // войтиВДругойToolStripMenuItem
+            // 
+            this.войтиВДругойToolStripMenuItem.Name = "войтиВДругойToolStripMenuItem";
+            this.войтиВДругойToolStripMenuItem.Size = new System.Drawing.Size(181, 24);
+            this.войтиВДругойToolStripMenuItem.Text = "Войти в другой";
+            this.войтиВДругойToolStripMenuItem.Click += new System.EventHandler(this.войтиВДругойToolStripMenuItem_Click);
+            // 
             // кандидатыToolStripMenuItem
             // 
             this.кандидатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -85,14 +108,14 @@ namespace Department
             // всеКандидатыToolStripMenuItem
             // 
             this.всеКандидатыToolStripMenuItem.Name = "всеКандидатыToolStripMenuItem";
-            this.всеКандидатыToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.всеКандидатыToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.всеКандидатыToolStripMenuItem.Text = "Все кандидаты";
             this.всеКандидатыToolStripMenuItem.Click += new System.EventHandler(this.всеКандидатыToolStripMenuItem_Click);
             // 
             // поискКандидатаToolStripMenuItem
             // 
             this.поискКандидатаToolStripMenuItem.Name = "поискКандидатаToolStripMenuItem";
-            this.поискКандидатаToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.поискКандидатаToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
             this.поискКандидатаToolStripMenuItem.Text = "Поиск кандидата";
             this.поискКандидатаToolStripMenuItem.Click += new System.EventHandler(this.поискКандидатаToolStripMenuItem_Click);
             // 
@@ -111,6 +134,13 @@ namespace Department
             this.всеСотрудникиToolStripMenuItem.Size = new System.Drawing.Size(200, 24);
             this.всеСотрудникиToolStripMenuItem.Text = "Все сотрудники";
             this.всеСотрудникиToolStripMenuItem.Click += new System.EventHandler(this.всеСотрудникиToolStripMenuItem_Click);
+            // 
+            // поискСотрудникаToolStripMenuItem
+            // 
+            this.поискСотрудникаToolStripMenuItem.Name = "поискСотрудникаToolStripMenuItem";
+            this.поискСотрудникаToolStripMenuItem.Size = new System.Drawing.Size(200, 24);
+            this.поискСотрудникаToolStripMenuItem.Text = "Поиск сотрудника";
+            this.поискСотрудникаToolStripMenuItem.Click += new System.EventHandler(this.поискСотрудникаToolStripMenuItem_Click);
             // 
             // справочникиToolStripMenuItem
             // 
@@ -159,33 +189,12 @@ namespace Department
             this.должностиToolStripMenuItem.Text = "Должности";
             this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
-            // поискСотрудникаToolStripMenuItem
+            // аудитToolStripMenuItem
             // 
-            this.поискСотрудникаToolStripMenuItem.Name = "поискСотрудникаToolStripMenuItem";
-            this.поискСотрудникаToolStripMenuItem.Size = new System.Drawing.Size(200, 24);
-            this.поискСотрудникаToolStripMenuItem.Text = "Поиск сотрудника";
-            this.поискСотрудникаToolStripMenuItem.Click += new System.EventHandler(this.поискСотрудникаToolStripMenuItem_Click);
-            // 
-            // мойПрофильToolStripMenuItem
-            // 
-            this.мойПрофильToolStripMenuItem.Name = "мойПрофильToolStripMenuItem";
-            this.мойПрофильToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.мойПрофильToolStripMenuItem.Text = "Мой профиль";
-            this.мойПрофильToolStripMenuItem.Click += new System.EventHandler(this.мойПрофильToolStripMenuItem_Click);
-            // 
-            // войтиВДругойToolStripMenuItem
-            // 
-            this.войтиВДругойToolStripMenuItem.Name = "войтиВДругойToolStripMenuItem";
-            this.войтиВДругойToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.войтиВДругойToolStripMenuItem.Text = "Войти в другой";
-            this.войтиВДругойToolStripMenuItem.Click += new System.EventHandler(this.войтиВДругойToolStripMenuItem_Click);
-            // 
-            // пользователиToolStripMenuItem
-            // 
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
-            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            this.аудитToolStripMenuItem.Name = "аудитToolStripMenuItem";
+            this.аудитToolStripMenuItem.Size = new System.Drawing.Size(59, 23);
+            this.аудитToolStripMenuItem.Text = "Аудит";
+            this.аудитToolStripMenuItem.Click += new System.EventHandler(this.аудитToolStripMenuItem_Click);
             // 
             // FormMainMenu
             // 
@@ -225,5 +234,6 @@ namespace Department
         private System.Windows.Forms.ToolStripMenuItem мойПрофильToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem войтиВДругойToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem аудитToolStripMenuItem;
     }
 }

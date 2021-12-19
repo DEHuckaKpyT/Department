@@ -13,6 +13,7 @@ namespace Department
     public partial class FormMainMenu : Form
     {
         int userId;
+        bool change;
         public FormMainMenu(int userId)
         {
             InitializeComponent();
@@ -21,12 +22,16 @@ namespace Department
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
+            User user = DataBase.SelectQuery<User>($"select * from [User] where UserID = {userId}")[0];
 
+            пользователиToolStripMenuItem.Enabled = user.CanSeeUsers;
+            аудитToolStripMenuItem.Enabled = user.CanSeeLog;
+            change = user.CanChangeInf;
         }
 
         private void всеКандидатыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCandidates form = new FormCandidates();
+            FormCandidates form = new FormCandidates(change);
             form.ShowDialog();
         }
 
@@ -37,42 +42,42 @@ namespace Department
 
         private void улицыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormStreets().ShowDialog();
+            new FormStreets(change).ShowDialog();
         }
 
         private void институтыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormInstitutes().ShowDialog();
+            new FormInstitutes(change).ShowDialog();
         }
 
         private void КафедрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormDepartments().ShowDialog();
+            new FormDepartments(change).ShowDialog();
         }
 
         private void степениToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormDegrees().ShowDialog();
+            new FormDegrees(change).ShowDialog();
         }
 
         private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormPosts().ShowDialog();
+            new FormPosts(change).ShowDialog();
         }
 
         private void всеСотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormPersons().ShowDialog();
+            new FormPersons(change).ShowDialog();
         }
 
         private void поискКандидатаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormSearchCandidate().ShowDialog();
+            new FormSearchCandidate(change).ShowDialog();
         }
 
         private void поискСотрудникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormSearchPerson().ShowDialog();
+            new FormSearchPerson(change).ShowDialog();
         }
 
         private void мойПрофильToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +93,11 @@ namespace Department
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormUsers().ShowDialog();
+        }
+
+        private void аудитToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAudit().ShowDialog();
         }
     }
 }

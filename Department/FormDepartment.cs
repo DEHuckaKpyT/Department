@@ -12,11 +12,13 @@ namespace Department
 {
     public partial class FormDepartment : Form
     {
+        bool change;
         int departmentId;
-        public FormDepartment(int departmentId)
+        public FormDepartment(int departmentId, bool change)
         {
             InitializeComponent();
             this.departmentId = departmentId;
+            this.change = change;
         }
 
         private void FormDepartment_Load(object sender, EventArgs e)
@@ -28,6 +30,7 @@ namespace Department
                 comboBox1.Items.Add(institute.Institute);
             }
             comboBox1.Text = DataBase.SelectQuery<Institutes>($"select * from Institute where InstituteID = {department.InstituteID}")[0].Institute;
+            button1.Enabled = change;
         }
 
         private void button1_Click(object sender, EventArgs e)

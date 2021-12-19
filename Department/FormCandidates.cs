@@ -13,11 +13,13 @@ namespace Department
 {
     public partial class FormCandidates : Form
     {
+        bool change;
         DataSet dataSet;
         SqlDataAdapter dataAdapter;
-        public FormCandidates()
+        public FormCandidates(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void FormCandidates_Load(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace Department
 
             if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
             {
-                new FormCandidate((int)grid[0, e.RowIndex].Value).ShowDialog();
+                new FormCandidate((int)grid[0, e.RowIndex].Value, change).ShowDialog();
                 LoadGrid();
             }
         }
@@ -50,6 +52,7 @@ namespace Department
                 Text = "Подробнее",
                 UseColumnTextForButtonValue = true
             });
+
         }
     }
 }

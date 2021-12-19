@@ -13,15 +13,17 @@ namespace Department
 {
     public partial class FormPerson : Form
     {
+        bool change;
         int PersonId;
         DataSet dataSet1;
         SqlDataAdapter dataAdapter1;
         DataSet dataSet2;
         SqlDataAdapter dataAdapter2;
-        public FormPerson(int PersonId)
+        public FormPerson(int PersonId, bool change)
         {
             InitializeComponent();
             this.PersonId = PersonId;
+            this.change = change;
         }
 
         private void FormPerson_Load(object sender, EventArgs e)
@@ -107,6 +109,13 @@ namespace Department
             dataAdapter2.Fill(dataSet2, "Reward");
             dataGridViewRewards.DataSource = dataSet2.Tables["Reward"];
             dataGridViewRewards.Columns[0].Visible = false;
+            dataGridViewPenalties.ReadOnly = !change;
+            dataGridViewRewards.ReadOnly = !change;
+            buttonUpdate.Enabled = change;
+            buttonAddReward.Enabled = change;
+            buttonAddPenalty.Enabled = change;
+            buttonUpdatePenalty.Enabled = change;
+            buttonUpdateReward.Enabled = change;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

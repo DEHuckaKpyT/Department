@@ -19,7 +19,7 @@ namespace Department
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            List<User> users = DataBase.SelectQuery<User>($"select * from [user] where login = '{Login.Text}'");
+            List<User> users = DataBase.SelectQuery<User>($"select * from [User] where login = '{Login.Text}'");
             if (users.Count == 1)
             {
                 User user = users.First();
@@ -27,8 +27,11 @@ namespace Department
                 {
                     new FormMainMenu(user.UserID).Show();
                     Hide();
+                    DataBase.InsertUpdateDeleteQuery($"insert into Log (Message, DateTime, UserID) values ('Успешный вход', '{DateTime.Now}', {user.UserID})");
                     return;
                 }
+                else
+                    DataBase.InsertUpdateDeleteQuery($"insert into Log (Message, DateTime, UserID) values ('Попытка входа', '{DateTime.Now}', {user.UserID})");
             }
             MessageBox.Show("Неверный логин или пароль");
         }

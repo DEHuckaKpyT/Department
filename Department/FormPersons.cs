@@ -13,9 +13,11 @@ namespace Department
 {
     public partial class FormPersons : Form
     {
-        public FormPersons()
+        bool change;
+        public FormPersons(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void FormPersons_Load(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace Department
 
             if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
             {
-                new FormPerson(Convert.ToInt32(grid[0, e.RowIndex].Value)).ShowDialog();
+                new FormPerson(Convert.ToInt32(grid[0, e.RowIndex].Value), change).ShowDialog();
                 LoadGrid();
             }
         }

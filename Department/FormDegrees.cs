@@ -13,11 +13,13 @@ namespace Department
 {
     public partial class FormDegrees : Form
     {
+        bool change;
         DataSet dataSet;
         SqlDataAdapter dataAdapter;
-        public FormDegrees()
+        public FormDegrees(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +42,8 @@ namespace Department
             dataAdapter.Fill(dataSet, "Degree");
             dataGridView1.DataSource = dataSet.Tables["Degree"];
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.ReadOnly = !change;
+            button1.Enabled = change;
         }
     }
 }

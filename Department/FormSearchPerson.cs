@@ -12,9 +12,11 @@ namespace Department
 {
     public partial class FormSearchPerson : Form
     {
-        public FormSearchPerson()
+        bool change;
+        public FormSearchPerson(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace Department
                 List<Person> persons = DataBase.Execute<Person>("SearchPerson", "@id", Convert.ToInt16(textBox1.Text), "@FirstName", DBNull.Value, "@Name", DBNull.Value, "@LastName", DBNull.Value);
                 if (persons.Count != 0)
                 {
-                    new FormPerson(persons[0].PersonID).Show();
+                    new FormPerson(persons[0].PersonID, change).Show();
                     Close();
                     return;
                 }
@@ -36,7 +38,7 @@ namespace Department
                 List<Person> persons = DataBase.Execute<Person>("SearchPerson", "@id", DBNull.Value, "@FirstName", textBox2.Text, "@Name", textBox3.Text, "@LastName", textBox4.Text);
                 if (persons.Count != 0)
                 {
-                    new FormPerson(persons[0].PersonID).Show();
+                    new FormPerson(persons[0].PersonID, change).Show();
                     Close();
                     return;
                 }

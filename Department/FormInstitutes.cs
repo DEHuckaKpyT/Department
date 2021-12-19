@@ -13,11 +13,13 @@ namespace Department
 {
     public partial class FormInstitutes : Form
     {
+        bool change;
         DataSet dataSet;
         SqlDataAdapter dataAdapter;
-        public FormInstitutes()
+        public FormInstitutes(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void FormInstitutes_Load(object sender, EventArgs e)
@@ -27,6 +29,8 @@ namespace Department
             dataAdapter.Fill(dataSet, "Institute");
             dataGridView1.DataSource = dataSet.Tables["Institute"];
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.ReadOnly = !change;
+            button1.Enabled = change;
         }
 
         private void button1_Click(object sender, EventArgs e)

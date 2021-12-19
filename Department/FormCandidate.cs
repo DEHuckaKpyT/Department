@@ -13,11 +13,13 @@ namespace Department
 {
     public partial class FormCandidate : Form
     {
+        bool change;
         int candidateId;
-        public FormCandidate(int candidateId)
+        public FormCandidate(int candidateId, bool change)
         {
             InitializeComponent();
             this.candidateId = candidateId;
+            this.change = change;
         }
 
         private void FormCandidate_Load(object sender, EventArgs e)
@@ -48,6 +50,8 @@ namespace Department
 
             Posts post = DataBase.SelectQuery<Posts>($"select * from Post where PostID = {candidate.PostID}")[0];
             textBoxPost.Text = post.Post;
+
+            button.Enabled = change;
         }
 
         private void button_Click(object sender, EventArgs e)

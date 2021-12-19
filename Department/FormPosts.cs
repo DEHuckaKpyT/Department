@@ -13,11 +13,13 @@ namespace Department
 {
     public partial class FormPosts : Form
     {
+        bool change;
         DataSet dataSet;
         SqlDataAdapter dataAdapter;
-        public FormPosts()
+        public FormPosts(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void FormPosts_Load(object sender, EventArgs e)
@@ -27,6 +29,8 @@ namespace Department
             dataAdapter.Fill(dataSet, "Post");
             dataGridView1.DataSource = dataSet.Tables["Post"];
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.ReadOnly = !change;
+            button1.Enabled = change;
         }
 
         private void button1_Click(object sender, EventArgs e)

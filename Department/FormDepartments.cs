@@ -13,9 +13,11 @@ namespace Department
 {
     public partial class FormDepartments : Form
     {
-        public FormDepartments()
+        bool change;
+        public FormDepartments(bool change)
         {
             InitializeComponent();
+            this.change = change;
         }
 
         private void FormDepartments_Load(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace Department
                 Text = "Подробнее",
                 UseColumnTextForButtonValue = true
             });
+            button1.Enabled = change;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,7 +54,7 @@ namespace Department
 
             if (grid[e.ColumnIndex, e.RowIndex] is DataGridViewButtonCell)
             {
-                new FormDepartment((int)grid[0, e.RowIndex].Value).ShowDialog();
+                new FormDepartment((int)grid[0, e.RowIndex].Value, change).ShowDialog();
                 LoadGrid();
             }
         }

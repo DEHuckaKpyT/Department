@@ -74,6 +74,12 @@
     <Compile Include="FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAudit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAudit.Designer.cs">
+      <DependentUpon>FormAudit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDegrees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAudit.resx">
+      <DependentUpon>FormAudit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCandidate.resx">
       <DependentUpon>FormCandidate.cs</DependentUpon>
