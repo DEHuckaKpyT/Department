@@ -74,5 +74,20 @@ namespace Department
         {
             new FormSearchPerson().ShowDialog();
         }
+
+        private void мойПрофильToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormProfile(userId).ShowDialog();
+        }
+
+        private void войтиВДругойToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormUsers().ShowDialog();
+        }
     }
 }

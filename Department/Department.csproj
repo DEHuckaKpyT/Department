@@ -68,6 +68,12 @@
     <Compile Include="FormAddPenalty.Designer.cs">
       <DependentUpon>FormAddPenalty.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDegrees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="FormDepartment.Designer.cs">
       <DependentUpon>FormDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPassword.Designer.cs">
+      <DependentUpon>FormPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPerson.cs">
       <SubType>Form</SubType>
@@ -98,6 +110,12 @@
     <Compile Include="FormPosts.Designer.cs">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearchCandidate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +127,12 @@
     </Compile>
     <Compile Include="FormSearchPerson.Designer.cs">
       <DependentUpon>FormSearchPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Institutes.cs" />
     <Compile Include="Penalties.cs" />
@@ -168,6 +192,9 @@
     <EmbeddedResource Include="FormAddPenalty.resx">
       <DependentUpon>FormAddPenalty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCandidate.resx">
       <DependentUpon>FormCandidate.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +216,9 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPassword.resx">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPerson.resx">
       <DependentUpon>FormPerson.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +228,9 @@
     <EmbeddedResource Include="FormPosts.resx">
       <DependentUpon>FormPosts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearchCandidate.resx">
       <DependentUpon>FormSearchCandidate.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStreets.resx">
       <DependentUpon>FormStreets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

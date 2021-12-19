@@ -11,6 +11,9 @@ namespace Department
         public int UserID { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public bool CanAll { get; set; }
+        public int PersonID { get; set; }
+        public bool CanSeeUsers { get; set; }
+        public bool CanChangeInf { get; set; }
+        public bool CanSeeLog { get; set; }
     }
 }

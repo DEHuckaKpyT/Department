@@ -43,6 +43,9 @@ namespace Department
             this.степениToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискСотрудникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.мойПрофильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.войтиВДругойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +65,10 @@ namespace Department
             // 
             // профильToolStripMenuItem
             // 
+            this.профильToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.пользователиToolStripMenuItem,
+            this.мойПрофильToolStripMenuItem,
+            this.войтиВДругойToolStripMenuItem});
             this.профильToolStripMenuItem.Name = "профильToolStripMenuItem";
             this.профильToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
             this.профильToolStripMenuItem.Text = "Профиль";
@@ -159,6 +166,27 @@ namespace Department
             this.поискСотрудникаToolStripMenuItem.Text = "Поиск сотрудника";
             this.поискСотрудникаToolStripMenuItem.Click += new System.EventHandler(this.поискСотрудникаToolStripMenuItem_Click);
             // 
+            // мойПрофильToolStripMenuItem
+            // 
+            this.мойПрофильToolStripMenuItem.Name = "мойПрофильToolStripMenuItem";
+            this.мойПрофильToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.мойПрофильToolStripMenuItem.Text = "Мой профиль";
+            this.мойПрофильToolStripMenuItem.Click += new System.EventHandler(this.мойПрофильToolStripMenuItem_Click);
+            // 
+            // войтиВДругойToolStripMenuItem
+            // 
+            this.войтиВДругойToolStripMenuItem.Name = "войтиВДругойToolStripMenuItem";
+            this.войтиВДругойToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.войтиВДругойToolStripMenuItem.Text = "Войти в другой";
+            this.войтиВДругойToolStripMenuItem.Click += new System.EventHandler(this.войтиВДругойToolStripMenuItem_Click);
+            // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,5 +222,8 @@ namespace Department
         private System.Windows.Forms.ToolStripMenuItem всеСотрудникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискКандидатаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискСотрудникаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem мойПрофильToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem войтиВДругойToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
     }
 }

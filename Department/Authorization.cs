@@ -27,12 +27,10 @@ namespace Department
                 {
                     new FormMainMenu(user.UserID).Show();
                     Hide();
+                    return;
                 }
             }
-            else
-            {
-                MessageBox.Show("Неверный логин или пароль");
-            }
+            MessageBox.Show("Неверный логин или пароль");
         }
 
         private void Authorization_Load(object sender, EventArgs e)

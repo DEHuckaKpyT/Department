@@ -127,9 +127,7 @@ namespace Department
                             if (value != DBNull.Value)
                             {
                                 Type ty = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
-
                                 object safeValue = (value == null) ? null : Convert.ChangeType(value, ty);
-                                //object v = Convert.ChangeType( value, prop.PropertyType);
                                 prop.SetValue(t, safeValue, null);
                             }
                         }
