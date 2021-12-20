@@ -49,6 +49,8 @@ namespace Department
             dataGridView1.DataSource = dataSet.Tables["View_Persons"];
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Width = 200;
+            dataGridView1.Columns[1].HeaderText = "mytext";
+
             dataGridView1.Columns.Add(new DataGridViewButtonColumn()
             {
                 Text = "Подробнее",

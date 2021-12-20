@@ -8,7 +8,12 @@ namespace Department
 {
     class Posts
     {
-        public int PostId { get; set; }
+        public int PostID { get; set; }
         public string Post { get; set; }
+
+        public override string ToString()
+        {
+            return Post;
+        }
     }
 }

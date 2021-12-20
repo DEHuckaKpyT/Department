@@ -58,20 +58,27 @@ namespace Department
             }
             textBoxHouse.Text = person.House.ToString();
             textBoxFlat.Text = person.Flat.ToString();
+
+            foreach (Posts p in DataBase.SelectQuery<Posts>("select * from Post"))
+                comboBoxPost.Items.Add(p);
             if (person.PostID != null)
             {
+                comboBoxPost.Items.Clear();
                 foreach (Posts p in DataBase.SelectQuery<Posts>("select * from Post"))
                 {
-                    comboBoxStreet.Items.Add(p);
-                    if (p.PostId == person.PostID) comboBoxStreet.SelectedItem = p;
+                    comboBoxPost.Items.Add(p);
+                    if (p.PostID == person.PostID) comboBoxPost.SelectedItem = p;
                 }
             }
+            foreach (Degrees d in DataBase.SelectQuery<Degrees>("select * from Degree"))
+                comboBoxDegree.Items.Add(d);
             if (person.DegreeID != null)
             {
+                comboBoxDegree.Items.Clear();
                 foreach (Degrees d in DataBase.SelectQuery<Degrees>("select * from Degree"))
                 {
-                    comboBoxStreet.Items.Add(d);
-                    if (d.DegreeID == person.DegreeID) comboBoxStreet.SelectedItem = d;
+                    comboBoxDegree.Items.Add(d);
+                    if (d.DegreeID == person.DegreeID) comboBoxDegree.SelectedItem = d;
                 }
             }
             LastWork work = DataBase.SelectQuery<LastWork>($"select * from LastWork where WorkID = {person.WorkID}")[0];
@@ -155,7 +162,12 @@ namespace Department
 
         private void buttonAddReward_Click(object sender, EventArgs e)
         {
-
+            new FormAddReward(PersonId).ShowDialog();
+            dataSet2 = new DataSet();
+            dataAdapter2 = new SqlDataAdapter($"SELECT [IDNoteReward], Reward FROM Reward where PersonID = {PersonId}", DataBase.connection);
+            dataAdapter2.Fill(dataSet2, "Reward");
+            dataGridViewRewards.DataSource = dataSet2.Tables["Reward"];
+            dataGridViewRewards.Columns[0].Visible = false;
         }
 
         private void buttonUpdatePenalty_Click(object sender, EventArgs e)
@@ -208,7 +220,7 @@ namespace Department
             if (comboBoxStreet.Text != "")
                 query += $"StreetID = {((Streets)comboBoxStreet.SelectedItem).StreetID}, ";
             if (comboBoxPost.Text != "")
-                query += $"PostID = {((Posts)comboBoxPost.SelectedItem).PostId}, ";
+                query += $"PostID = {((Posts)comboBoxPost.SelectedItem).PostID}, ";
             if (comboBoxDegree.Text != "")
                 query += $"DegreeID = {((Degrees)comboBoxDegree.SelectedItem).DegreeID}, ";
 
